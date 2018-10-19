@@ -10,8 +10,8 @@ $arResult["SKILLS_PER"] = $arParams["SKILLS_PER"];
 \Bitrix\Main\Loader::includeModule('iblock');
 
 //http://bitrix.test/novaya-stranitsa.php?clear_cache=Y
-$text='Тест';
-//$text=$_REQUEST['text'];
+
+$text=$_REQUEST['text'];
 
 
 $dbItems = \Bitrix\Iblock\ElementTable::getList(array(
@@ -20,6 +20,7 @@ $dbItems = \Bitrix\Iblock\ElementTable::getList(array(
     'limit'=>10
 ));
 $arResult=array();
+
 
 while ($arItem = $dbItems->fetch()){
     //DETAIL_PAGE_URL d7 не выводит!!!
