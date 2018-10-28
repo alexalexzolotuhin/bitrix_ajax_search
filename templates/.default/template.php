@@ -3,12 +3,11 @@
 
 global $APPLICATION;
 $APPLICATION->SetAdditionalCss("/js/script.js");
-/*
-if($arParams['INCLUDE_CSS'] == 'Y') {
-    $this->addExternalCss($templateFolder . '/theme/' . $arParams['THEME'] . '/style.css');
-} */
-$this->addExternalJs('/local/components/ftask/search.ajax/js/jquery-3.1.1.min.js');
-$this->addExternalJs('/local/components/ftask/search.ajax/js/jquery-migrate-1.4.1.min.js');
+
+if($arParams['USE_JQUERY']=='Y'){
+    $this->addExternalJs('/local/components/ftask/search.ajax/js/jquery-3.1.1.min.js');
+    $this->addExternalJs('/local/components/ftask/search.ajax/js/jquery-migrate-1.4.1.min.js');
+}
 $this->addExternalJs('/local/components/ftask/search.ajax/js/slimscroll.min.js');
 $this->addExternalJs('/local/components/ftask/search.ajax/js/script.js');
 

@@ -26,11 +26,14 @@ $arComponentParameters = array(
             "NAME" => GetMessage("FTASK_IBLOCK_NAME"),
             "TYPE" => "LIST",
             "VALUES" => $arIBlocks,
-          //  "DEFAULT" => '={$_REQUEST["ID"]}',
-           // "ADDITIONAL_VALUES" => "Y",
             "REFRESH" => "Y",
         ),
-
+        "USE_JQUERY" => array(
+            "PARENT" => "DATA_SOURCE",
+            "NAME" => GetMessage("FTASK_SEARCH_USE_JQUERY"),
+            "TYPE" => "CHECKBOX",
+            "DEFAULT" => "Y",
+        ),
 
 
     ),

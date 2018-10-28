@@ -5,6 +5,7 @@ $MESS["FTASK_PARAM2"] = "Второй параметр";
 
 $MESS["FTASK_IBLOCK_TYPE"] = "Тип инфоблока";
 $MESS["FTASK_IBLOCK_NAME"] = "Название инфоблока";
+$MESS["FTASK_SEARCH_USE_JQUERY"] = "Использовать jquery";
 
 
 ?>
