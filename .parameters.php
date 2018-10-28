@@ -1,34 +1,38 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+
+if(!CModule::IncludeModule("iblock"))
+    return;
+
+$arTypesEx = CIBlockParameters::GetIBlockTypes(array("-"=>" "));
+
+$arIBlocks=array();
+$db_iblock = CIBlock::GetList(array("SORT"=>"ASC"), array("SITE_ID"=>$_REQUEST["site"], "TYPE" => ($arCurrentValues["IBLOCK_TYPE"]!="-"?$arCurrentValues["IBLOCK_TYPE"]:"")));
+while($arRes = $db_iblock->Fetch())
+    $arIBlocks[$arRes["ID"]] = "[".$arRes["ID"]."] ".$arRes["NAME"];
+
+
 $arComponentParameters = array(
     "PARAMETERS" => array(
-        "FILE" => array(
+        "IBLOCK_TYPE" => array(
             "PARENT" => "BASE",
-            "NAME" => GetMessage("FTASK_IMG"),
-            "TYPE" => "FILE",
-            "FD_EXT" => "png,gif,jpg,jpeg",
-            "FD_UPLOAD" => true,
-            "FD_USE_MEDIALIB" => true,
-            "FD_MEDIALIB_TYPES" => Array(
-                'image',
-            ),
-            "DEFAULT" => ""
+            "NAME" => GetMessage("FTASK_IBLOCK_TYPE"),
+            "TYPE" => "LIST",
+            "VALUES" => $arTypesEx,
+            "DEFAULT" => "news",
+            "REFRESH" => "Y",
         ),
-        "SKILLS" => array(
+        "IBLOCK_ID" => array(
             "PARENT" => "BASE",
-            "NAME" => GetMessage("FTASK_PARAM1"),
-            "TYPE" => "STRING",
-            "MULTIPLE" => "Y",
-            "ADDITIONAL_VALUES" => "Y",
-            "DEFAULT" => null,
+            "NAME" => GetMessage("FTASK_IBLOCK_NAME"),
+            "TYPE" => "LIST",
+            "VALUES" => $arIBlocks,
+          //  "DEFAULT" => '={$_REQUEST["ID"]}',
+           // "ADDITIONAL_VALUES" => "Y",
+            "REFRESH" => "Y",
         ),
-        "SKILLS_PER" => array(
-            "PARENT" => "BASE",
-            "NAME" => GetMessage("FTASK_PARAM2"),
-            "TYPE" => "STRING",
-            "MULTIPLE" => "Y",
-            "ADDITIONAL_VALUES" => "Y",
-            "DEFAULT" => null,
-        )
+
+
+
     ),
 );
 ?>
