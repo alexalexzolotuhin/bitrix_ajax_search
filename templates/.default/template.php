@@ -16,7 +16,7 @@ if(!isset($_REQUEST['FTASK_SEARCH_AJAX'])){
 
 <div class="ftask_search">
 <form action="">
-<input type="text" name="" value="" class="input left" placeholder="Р’РІРµРґРёС‚Рµ Р·Р°РїСЂРѕСЃ">
+<input type="text" name="" value="" class="input left" placeholder="Введите запрос">
 <button type="submit" class="submit_btn left">S</button>
 <div class="clear"></div>
 
@@ -34,7 +34,7 @@ else
 {
     $GLOBALS['APPLICATION']->RestartBuffer();
     foreach ($arResult as  $item){
-        //РїРѕРє
+        //пок
         ?>
         <a href="<?=$item['DETAIL_PAGE_URL']?>" class="tip">
             <div class="thumb">
@@ -42,11 +42,11 @@ else
             </div>
 
             <div class="info">
-                <!-- <div class="cat">РњРµР±РµР»СЊ РґР»СЏ РІР°РЅРЅРѕР№</div>-->
+                <!-- <div class="cat">Мебель для ванной</div>-->
                 <div class="name"><?=$item['NAME']?></div>
             </div>
 
-            <div class="link">РџРµСЂРµР№С‚Рё Рє С‚РѕРІР°СЂСѓ</div>
+            <div class="link">Перейти к товару</div>
         </a>
         <?php
     }

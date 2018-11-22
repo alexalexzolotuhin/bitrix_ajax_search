@@ -1,11 +1,11 @@
 <?
-$MESS["FTASK_IMG"] = "ÐšÐ°Ñ€Ñ‚Ð¸Ð½ÐºÐ° ÑÐºÐ¸Ð»Ð»Ð°";
-$MESS["FTASK_PARAM1"] = "ÐŸÐµÑ€Ð²Ñ‹Ð¹ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€";
-$MESS["FTASK_PARAM2"] = "Ð’Ñ‚Ð¾Ñ€Ð¾Ð¹ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€";
+$MESS["FTASK_IMG"] = "Êàðòèíêà ñêèëëà";
+$MESS["FTASK_PARAM1"] = "Ïåðâûé ïàðàìåòð";
+$MESS["FTASK_PARAM2"] = "Âòîðîé ïàðàìåòð";
 
-$MESS["FTASK_IBLOCK_TYPE"] = "Ð¢Ð¸Ð¿ Ð¸Ð½Ñ„Ð¾Ð±Ð»Ð¾ÐºÐ°";
-$MESS["FTASK_IBLOCK_NAME"] = "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð¸Ð½Ñ„Ð¾Ð±Ð»Ð¾ÐºÐ°";
-$MESS["FTASK_SEARCH_USE_JQUERY"] = "Ð˜ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÑŒ jquery";
+$MESS["FTASK_IBLOCK_TYPE"] = "Òèï èíôîáëîêà";
+$MESS["FTASK_IBLOCK_NAME"] = "Íàçâàíèå èíôîáëîêà";
+$MESS["FTASK_SEARCH_USE_JQUERY"] = "Èñïîëüçîâàòü jquery";
 
 
 ?>
