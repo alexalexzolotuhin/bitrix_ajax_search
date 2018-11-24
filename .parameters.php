@@ -32,7 +32,23 @@ $arComponentParameters = array(
             "PARENT" => "DATA_SOURCE",
             "NAME" => GetMessage("FTASK_SEARCH_USE_JQUERY"),
             "TYPE" => "CHECKBOX",
-            "DEFAULT" => "Y",
+            "DEFAULT" => "N",
+        ),
+        "PAGE" => array(
+            "PARENT" => "URL_TEMPLATES",
+            "NAME" => GetMessage("FTASK_SEARCH_FORM_PAGE"),
+            "TYPE" => "STRING",
+            "DEFAULT" => "#SITE_DIR#search/index.php",
+        ),
+        "NAME_SEARCH_BUTTON" => array(
+            "NAME" => GetMessage("FTASK_NAME_SEARCH_BUTTON"),
+            "TYPE" => "STRING",
+            "DEFAULT" => GetMessage("FTASK_NAME_SEARCH_BUTTON_DEFAULT"),
+        ),
+        "NAME_SEARCH_BUTTON_LIST" => array(
+            "NAME" => GetMessage("FTASK_NAME_SEARCH_BUTTON_LIST"),
+            "TYPE" => "STRING",
+            "DEFAULT" => GetMessage("FTASK_NAME_SEARCH_BUTTON_LIST_DEFAULT"),
         ),
 
 

@@ -35,5 +35,13 @@ while ($arItem = $dbItems->fetch()){
     $arResult[]=$arItem;
 }
 
+//variables from component
+if(!isset($arParams["PAGE"]) || strlen($arParams["PAGE"])<=0)
+    $arParams["PAGE"] = "#SITE_DIR#search/index.php";
+
+$arResult["FORM_ACTION"] = htmlspecialcharsbx(str_replace("#SITE_DIR#", SITE_DIR, $arParams["PAGE"]));
+
+
+
 $this -> includeComponentTemplate();
 ?>

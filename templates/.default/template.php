@@ -15,9 +15,10 @@ if(!isset($_REQUEST['FTASK_SEARCH_AJAX'])){
 ?>
 
 <div class="ftask_search">
-<form action="">
-<input type="text" name="" value="" class="input left" placeholder="Введите запрос">
-<button type="submit" class="submit_btn left">S</button>
+
+<form action="<?=$arResult["FORM_ACTION"]?>" method="get">
+<input type="text" name="q" value="" class="input left" placeholder="Введите запрос">
+<button type="submit" class="submit_btn left"><?=$arParams["NAME_SEARCH_BUTTON"]?></button>
 <div class="clear"></div>
 
 <div class="tips">
@@ -46,7 +47,7 @@ else
                 <div class="name"><?=$item['NAME']?></div>
             </div>
 
-            <div class="link">Перейти к товару</div>
+            <div class="link"><?=$arParams['NAME_SEARCH_BUTTON_LIST']?></div>
         </a>
         <?php
     }
