@@ -1,7 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
-
-
 if(!empty($arParams['IBLOCK_ID']))
 {
     $IBLOCK_ID=$arParams['IBLOCK_ID'];
@@ -24,7 +22,6 @@ $dbItems = \Bitrix\Iblock\ElementTable::getList(array(
 $arResult=array();
 
 while ($arItem = $dbItems->fetch()){
-    //DETAIL_PAGE_URL d7 не выводит!!!
 
     $el_res= CIBlockElement::GetByID( $arItem['ID'] );
     if ( $el_arr= $el_res->GetNext() ) {
