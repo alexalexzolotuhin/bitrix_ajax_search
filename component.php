@@ -13,24 +13,29 @@ else
 \Bitrix\Main\Loader::includeModule('iblock');
 //http://bitrix.test/novaya-stranitsa.php?clear_cache=Y
 $text=$_REQUEST['text'];
-
-$dbItems = \Bitrix\Iblock\ElementTable::getList(array(
-    'select' => array('ID', 'NAME', 'IBLOCK_ID' , 'PREVIEW_PICTURE', ), //,'DETAIL_PAGE_URL'
-    'filter' => array('IBLOCK_ID' => $IBLOCK_ID ,'NAME'=>'%'.strip_tags($text).'%'),
-    'limit'=>10
-));
 $arResult=array();
 
-while ($arItem = $dbItems->fetch()){
+if(isset($_REQUEST['FTASK_SEARCH_AJAX'])) {
 
-    $el_res= CIBlockElement::GetByID( $arItem['ID'] );
-    if ( $el_arr= $el_res->GetNext() ) {
-        $arItem['DETAIL_PAGE_URL']= $el_arr[ 'DETAIL_PAGE_URL' ];
-        $arItem['PREVIEW_PICTURE']=  CFile::GetPath( $el_arr[ 'PREVIEW_PICTURE' ]  ) ;
+    $dbItems = \Bitrix\Iblock\ElementTable::getList(array(
+        'select' => array('ID', 'NAME', 'IBLOCK_ID', 'PREVIEW_PICTURE',), //,'DETAIL_PAGE_URL'
+        'filter' => array('IBLOCK_ID' => $IBLOCK_ID, 'NAME' => '%' . strip_tags($text) . '%'),
+        'limit' => 10
+    ));
+
+    while ($arItem = $dbItems->fetch()) {
+
+        $el_res = CIBlockElement::GetByID($arItem['ID']);
+        if ($el_arr = $el_res->GetNext()) {
+            $arItem['DETAIL_PAGE_URL'] = $el_arr['DETAIL_PAGE_URL'];
+            $arItem['PREVIEW_PICTURE'] = CFile::GetPath($el_arr['PREVIEW_PICTURE']);
+        }
+        // debug($arItem);
+        $arResult['ITEMS'][] = $arItem;
     }
-    // debug($arItem);
-    $arResult[]=$arItem;
+
 }
+
 
 //variables from component
 if(!isset($arParams["PAGE"]) || strlen($arParams["PAGE"])<=0)
