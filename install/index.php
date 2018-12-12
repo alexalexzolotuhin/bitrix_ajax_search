@@ -1,15 +1,15 @@
 <?
 
-Class ftask_search_ajax extends CModule
+Class ftask_searchajax extends CModule
 {
-    var $MODULE_ID = "ftask.search.ajax";//id из bitrix системы
+    var $MODULE_ID = "ftask.searchajax";//id из bitrix системы
     var $MODULE_VERSION;
     var $MODULE_VERSION_DATE;
     var $MODULE_NAME;
     var $MODULE_DESCRIPTION;
     var $MODULE_CSS;
 
-    function ftask_search_ajax()
+    function ftask_searchajax()
     {
         $arModuleVersion = array();
 
@@ -17,19 +17,22 @@ Class ftask_search_ajax extends CModule
         $path = substr($path, 0, strlen($path) - strlen("/index.php"));
         include($path."/version.php");
 
+        $this->PARTNER_NAME = "ftask";
+        $this->PARTNER_URI = "http://ftask.ru/";
+
         if (is_array($arModuleVersion) && array_key_exists("VERSION", $arModuleVersion))
         {
             $this->MODULE_VERSION = $arModuleVersion["VERSION"];
             $this->MODULE_VERSION_DATE = $arModuleVersion["VERSION_DATE"];
         }
 
-        $this->MODULE_NAME = "ftask.search.ajax Ц модуль с компонентом";
+        $this->MODULE_NAME = "ftask.searchajax Ц модуль с компонентом";
         $this->MODULE_DESCRIPTION = "ѕосле установки вы сможете пользоватьс€ компонентом ftask:search.ajax";
     }
 
     function InstallFiles()
     {
-        CopyDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/ftask.search.ajax/install/components",
+        CopyDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/ftask.searchajax/install/components",
             $_SERVER["DOCUMENT_ROOT"]."/bitrix/components", true, true);
         return true;
     }
@@ -44,16 +47,16 @@ Class ftask_search_ajax extends CModule
     {
         global $DOCUMENT_ROOT, $APPLICATION;
         $this->InstallFiles();
-        RegisterModule("ftask.search.ajax");
-        $APPLICATION->IncludeAdminFile("”становка модул€ ftask.search.ajax", $DOCUMENT_ROOT."/bitrix/modules/ftask.search.ajax/install/step.php");
+        RegisterModule("ftask.searchajax");
+        $APPLICATION->IncludeAdminFile("”становка модул€ ftask.searchajax", $DOCUMENT_ROOT."/bitrix/modules/ftask.searchajax/install/step.php");
     }
 
     function DoUninstall()
     {
         global $DOCUMENT_ROOT, $APPLICATION;
         $this->UnInstallFiles();
-        UnRegisterModule("ftask.search.ajax");
-        $APPLICATION->IncludeAdminFile("ƒеинсталл€ци€ модул€ ftask.search.ajax", $DOCUMENT_ROOT."/bitrix/modules/ftask.search.ajax/install/unstep.php");
+        UnRegisterModule("ftask.searchajax");
+        $APPLICATION->IncludeAdminFile("ƒеинсталл€ци€ модул€ ftask.searchajax", $DOCUMENT_ROOT."/bitrix/modules/ftask.searchajax/install/unstep.php");
     }
 }
 ?>

@@ -1,4 +1,4 @@
 <?if(!check_bitrix_sessid()) return;?>
 <?
-echo CAdminMessage::ShowNote("Модуль ftask.search.ajax успешно удален из системы");
+echo CAdminMessage::ShowNote("Модуль ftask.searchajax успешно удален из системы");
 ?>
