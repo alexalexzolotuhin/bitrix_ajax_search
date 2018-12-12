@@ -2,14 +2,14 @@
 <?php
 
 global $APPLICATION;
-$APPLICATION->SetAdditionalCss("/js/script.js");
+//$APPLICATION->SetAdditionalCss("/js/script.js");
 
 if($arParams['USE_JQUERY']=='Y'){
-    $this->addExternalJs('/local/components/ftask/search.ajax/js/jquery-3.1.1.min.js');
-    $this->addExternalJs('/local/components/ftask/search.ajax/js/jquery-migrate-1.4.1.min.js');
+    $this->addExternalJs('/bitrix/components/ftask/search.ajax/js/jquery-3.1.1.min.js');
+    $this->addExternalJs('/bitrix/components/ftask/search.ajax/js/jquery-migrate-1.4.1.min.js');
 }
-$this->addExternalJs('/local/components/ftask/search.ajax/js/slimscroll.min.js');
-$this->addExternalJs('/local/components/ftask/search.ajax/js/script.js');
+$this->addExternalJs('/bitrix/components/ftask/search.ajax/js/slimscroll.min.js');
+$this->addExternalJs('/bitrix/components/ftask/search.ajax/js/script.js');
 
 if(!isset($_REQUEST['FTASK_SEARCH_AJAX'])){
 ?>
