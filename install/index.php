@@ -26,8 +26,8 @@ Class ftask_searchajax extends CModule
             $this->MODULE_VERSION_DATE = $arModuleVersion["VERSION_DATE"];
         }
 
-        $this->MODULE_NAME = "ftask.searchajax Ц модуль с компонентом";
-        $this->MODULE_DESCRIPTION = "ѕосле установки вы сможете пользоватьс€ компонентом ftask:search.ajax";
+        $this->MODULE_NAME = GetMessage("FTASK_SEARCHAJAX_MODULE_NAME");
+        $this->MODULE_DESCRIPTION = GetMessage("FTASK_SEARCHAJAX_MODULE_DESCRIPTION");
     }
 
     function InstallFiles()
@@ -48,7 +48,7 @@ Class ftask_searchajax extends CModule
         global $DOCUMENT_ROOT, $APPLICATION;
         $this->InstallFiles();
         RegisterModule("ftask.searchajax");
-        $APPLICATION->IncludeAdminFile("”становка модул€ ftask.searchajax", $DOCUMENT_ROOT."/bitrix/modules/ftask.searchajax/install/step.php");
+        $APPLICATION->IncludeAdminFile(GetMessage("FTASK_SEARCHAJAX_INSTALL_TITLE"), $DOCUMENT_ROOT."/bitrix/modules/ftask.searchajax/install/step.php");
     }
 
     function DoUninstall()
@@ -56,7 +56,7 @@ Class ftask_searchajax extends CModule
         global $DOCUMENT_ROOT, $APPLICATION;
         $this->UnInstallFiles();
         UnRegisterModule("ftask.searchajax");
-        $APPLICATION->IncludeAdminFile("ƒеинсталл€ци€ модул€ ftask.searchajax", $DOCUMENT_ROOT."/bitrix/modules/ftask.searchajax/install/unstep.php");
+        $APPLICATION->IncludeAdminFile(GetMessage("FTASK_SEARCHAJAX_UNINSTALL_TITLE"), $DOCUMENT_ROOT."/bitrix/modules/ftask.searchajax/install/unstep.php");
     }
 }
 ?>
