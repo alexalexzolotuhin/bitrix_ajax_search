@@ -30,7 +30,7 @@
      opacity: .5;
      border: none;
      border-radius: 3px;
-     background: #ccc url(/local/components/ftask/search.ajax/images/search.png) 92px 50% no-repeat;
+     background: #ccc url('images/search.png') 92px 50% no-repeat;
      position: absolute;
      right: 0px;
      text-align: left;
